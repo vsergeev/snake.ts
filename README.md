@@ -13,3 +13,7 @@ npm install
 npm run build
 npm start
 ```
+
+## License
+
+snake.ts is MIT licensed. See the included [LICENSE](LICENSE) file.
