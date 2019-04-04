@@ -10,6 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/blessed": "^0.1.11",
-    "blessed": "^0.1.81"
+    "blessed": "^0.1.81",
+    "typescript": "^3.4.1"
   }
 }
