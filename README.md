@@ -1,10 +1,8 @@
-# snake.ts
+# snake.ts [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vsergeev/snake.ts/blob/master/LICENSE)
 
-Make sure typescript is installed:
+A simple snake implementation in TypeScript and [blessed](https://github.com/chjj/blessed).
 
-```
-npm install -g typescript
-```
+## Building
 
 Build and run with:
 
