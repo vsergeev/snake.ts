@@ -1,0 +1,15 @@
+{
+  "name": "snake.ts",
+  "version": "1.0.0",
+  "description": "snake in typescript + blessed",
+  "scripts": {
+    "start": "node dist/snake.js",
+    "build": "tsc"
+  },
+  "author": "Vanya A. Sergeev <v@sergeev.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/blessed": "^0.1.11",
+    "blessed": "^0.1.81"
+  }
+}

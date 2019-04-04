@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "types": ["node"],
+    "outDir": "dist",
+    "newLine": "LF"
+  },
+  "include": [
+    "**.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
