@@ -86,22 +86,6 @@ abstract class Entity {
     }
 }
 
-/* Game Screen */
-interface Screen {
-    width: number;
-    height: number;
-
-    clear(): void;
-    drawPixel(coord: Coordinate, color: Color): void;
-    drawStatus(text: string): void;
-    render(): void;
-
-    reset(): void;
-    showModal(title: string, text: string): void;
-
-    bindInputs(keyHandler: (direction: Direction) => void, enterHandler: () => void, quitHandler: () => void): void;
-}
-
 /* Game World */
 class World {
     public dimensions: Dimensions;
@@ -185,6 +169,22 @@ class World {
 
         return null;
     }
+}
+
+/* Game Screen */
+interface Screen {
+    width: number;
+    height: number;
+
+    clear(): void;
+    drawPixel(coord: Coordinate, color: Color): void;
+    drawStatus(text: string): void;
+    render(): void;
+
+    reset(): void;
+    showModal(title: string, text: string): void;
+
+    bindInputs(keyHandler: (direction: Direction) => void, enterHandler: () => void, quitHandler: () => void): void;
 }
 
 /******************************************************************************/
