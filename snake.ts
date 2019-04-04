@@ -479,8 +479,8 @@ class SnakeGame {
         this._screen.reset();
 
         /* Add a snake and monster to the world */
-        let snakePosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, true);
-        let monsterPosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, true);
+        const snakePosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, true);
+        const monsterPosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, true);
         this._world.add(new SnakeEntity(snakePosition!, GAME_SNAKE_INITIAL_LENGTH));
         this._world.add(new MonsterEntity(monsterPosition!, GAME_MONSTER_INTERVAL));
 
@@ -503,13 +503,13 @@ class SnakeGame {
         /* Random placement of apple & orange */
         if ((this._world.frame % GAME_PLACEMENT_INTERVAL) == 0) {
             if (!this._world.has(AppleEntity) && Math.random() < GAME_APPLE_PROBABILITY) {
-                let position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS);
+                const position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS);
                 if (position)
                     this._world.add(new AppleEntity(position, GAME_APPLE_LIFETIME));
             }
 
             if (!this._world.has(OrangeEntity) && Math.random() < GAME_ORANGE_PROBABILITY) {
-                let position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS);
+                const position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS);
                 if (position)
                     this._world.add(new OrangeEntity(position, GAME_ORANGE_LIFETIME));
             }
