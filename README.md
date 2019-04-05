@@ -2,6 +2,8 @@
 
 A simple snake implementation in TypeScript and [blessed](https://github.com/chjj/blessed).
 
+[![asciicast](https://asciinema.org/a/vjsBUuF0u4YOdNXWRoQaPZaTm.svg)](https://asciinema.org/a/vjsBUuF0u4YOdNXWRoQaPZaTm)
+
 ## Building
 
 Build and run with:
