@@ -152,14 +152,14 @@ class World {
         screen.render();
     }
 
-    getRandomPosition(radius: number, loop = false): Coordinate | null {
+    getRandomPosition(radius: number, margin: number, loop = false): Coordinate | null {
         const [width, height] = this.dimensions;
 
         do {
             /* Generate a random coordinate */
             const position: Coordinate = [
-                Math.floor(radius + Math.random() * (width - radius)),
-                Math.floor(radius + Math.random() * (height - radius))
+                Math.floor(margin + Math.random() * (width - 2 * margin)),
+                Math.floor(margin + Math.random() * (height - 2 * margin))
             ];
 
             /* Check it is radius away from every entity */
@@ -446,6 +446,7 @@ const GAME_TICKS_PER_SECOND = (1000 / GAME_TICK_INTERVAL);
 const GAME_SNAKE_INITIAL_LENGTH = 3;
 const GAME_MONSTER_INTERVAL = 2;
 const GAME_PLACEMENT_RADIUS = 10;
+const GAME_PLACEMENT_MARGIN = 3;
 const GAME_PLACEMENT_INTERVAL = Math.floor(4 * GAME_TICKS_PER_SECOND);
 const GAME_APPLE_PROBABILITY = 0.80;
 const GAME_ORANGE_PROBABILITY = 0.15;
@@ -479,8 +480,8 @@ class SnakeGame {
         this._screen.reset();
 
         /* Add a snake and monster to the world */
-        const snakePosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, true);
-        const monsterPosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, true);
+        const snakePosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, GAME_PLACEMENT_MARGIN, true);
+        const monsterPosition = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, GAME_PLACEMENT_MARGIN, true);
         this._world.add(new SnakeEntity(snakePosition!, GAME_SNAKE_INITIAL_LENGTH));
         this._world.add(new MonsterEntity(monsterPosition!, GAME_MONSTER_INTERVAL));
 
@@ -503,13 +504,13 @@ class SnakeGame {
         /* Random placement of apple & orange */
         if ((this._world.frame % GAME_PLACEMENT_INTERVAL) == 0) {
             if (!this._world.has(AppleEntity) && Math.random() < GAME_APPLE_PROBABILITY) {
-                const position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS);
+                const position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, GAME_PLACEMENT_MARGIN);
                 if (position)
                     this._world.add(new AppleEntity(position, GAME_APPLE_LIFETIME));
             }
 
             if (!this._world.has(OrangeEntity) && Math.random() < GAME_ORANGE_PROBABILITY) {
-                const position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS);
+                const position = this._world.getRandomPosition(GAME_PLACEMENT_RADIUS, GAME_PLACEMENT_MARGIN);
                 if (position)
                     this._world.add(new OrangeEntity(position, GAME_ORANGE_LIFETIME));
             }
