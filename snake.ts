@@ -355,7 +355,7 @@ class BlessedScreen implements Screen {
     private _colors: { [color: string]: string };
 
     constructor() {
-        this._screen = blessed.screen();
+        this._screen = blessed.screen({ smartCSR: true });
         this.width = <number>this._screen.width;
         this.height = <number>this._screen.height - 1;
 
