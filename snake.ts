@@ -441,7 +441,7 @@ class BlessedScreen implements Screen {
 /******************************************************************************/
 
 /* Game Parameters */
-const GAME_TICK_INTERVAL = 100;
+const GAME_TICK_INTERVAL = 85;
 const GAME_TICKS_PER_SECOND = (1000 / GAME_TICK_INTERVAL);
 const GAME_SNAKE_INITIAL_LENGTH = 3;
 const GAME_MONSTER_INTERVAL = 2;
