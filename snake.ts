@@ -409,7 +409,7 @@ class BlessedScreen implements Screen {
     }
 
     drawPixel([x, y]: Coordinate, color: Color): void {
-        this._screen.fillRegion(this._colors[color], '▮', x, x + 1, y, y + 1);
+        this._screen.fillRegion(this._colors[color], '█', x, x + 1, y, y + 1);
     }
 
     drawStatus(text: string): void {
