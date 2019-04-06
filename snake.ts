@@ -228,7 +228,7 @@ class SnakeEntity extends Entity {
     /* Special Methods */
     /*******************/
 
-    handleKey(direction: Direction): void {
+    steer(direction: Direction): void {
         /* Ignore existing and reversal directions */
         if ((this._direction == Direction.Left || this._direction == Direction.Right) &&
             (direction == Direction.Left || direction == Direction.Right))
@@ -545,7 +545,7 @@ class SnakeGame {
     handleKey(direction: Direction): void {
         const snake = this._world.find(SnakeEntity);
         if (snake)
-            snake.handleKey(direction);
+            snake.steer(direction);
     }
 
     handleEnter(): void {
