@@ -369,7 +369,6 @@ class BlessedScreen implements Screen {
             style: {
                 fg: 'white',
                 bg: 'black',
-                // bold: true,
                 border: { fg: '#f0f0f0' },
             }
         });
@@ -394,13 +393,9 @@ class BlessedScreen implements Screen {
     }
 
     reset(): void {
-        /* Remove the modal */
         this._screen.remove(this._modalBox);
-
-        /* Clear the status */
         this._statusBox.setContent("");
 
-        /* Clear the screen */
         this.clear();
     }
 
